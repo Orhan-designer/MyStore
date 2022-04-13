@@ -1,0 +1,10 @@
+<h3>Shipping Prices</h3>
+
+<!-- Канал asyncвозвращает последнее значение из потока данных и продолжает делать это 
+    в течение всего срока службы данного компонента. 
+    Когда Angular уничтожает этот компонент, asyncканал автоматически останавливается. 
+-->
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+    <span>{{shipping.type}}</span>
+    <span>{{shipping.price | currency}}</span>
+</div>

@@ -1,0 +1,14 @@
+<!-- Обновите шаблон корзины с заголовком и используйте <div> для отображения 
+    каждого элемента корзины с его именем и ценой. 
+    В результате шаблон выглядит следующим образом.*ngFor CartComponent 
+-->
+<h3>Cart</h3>
+<!-- Добавьте ссылку в ShippingComponent представление. -->
+<p>
+    <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items">
+    <span>{{item.name}}</span>
+    <span>{{item.price | currency}}</span>
+</div>

@@ -12,3 +12,30 @@
     <span>{{item.name}}</span>
     <span>{{item.price | currency}}</span>
 </div>
+
+<!-- В нижней части <form> элемент HTML и кнопку « Купить ».
+Используйте formGroup привязку свойства для привязки checkoutForm к HTML <form>. -->
+<!-- В form теге используйте ngSubmit привязку события, чтобы прослушивать отправку формы 
+и вызывать onSubmit() метод с checkoutForm значением. -->
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <!-- Добавьте <input> поля для name и address, каждое с formControlName атрибутом, 
+        который привязывается к checkoutForm элементам управления формы для 
+        name и address к их <input> полям 
+    -->
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input type="text" formControlName="name" id="name">
+    </div>
+
+    <div>
+        <label for="address">
+            Address
+        </label>
+        <input type="text" id="address" formControlName="address">
+    </div>
+    <button class="button" type="submit">
+        Purchase
+    </button>
+</form>
